@@ -35,8 +35,18 @@ public class Rental
 
     public override string ToString()
     {
-        string ReturnInfo = IsReturned ? ReturnDate!.Value.ToShortDateString() : "Item is not returned!";
-        return $"User: {User.FullName}, Equipment: {Equipment.Name}, Borrowed: {BorrowDate.ToShortDateString()}, Due: {DueDate.ToShortDateString()}, Returned: {returnInfo}, Penalty: {PenaltyAmount:C}";
+        string returnedText;
+
+        if (IsReturned)
+        {
+            returnedText = ReturnDate.Value.ToShortDateString();
+        }
+        else
+        {
+            returnedText = "Not returned";
+        }
+
+        return $"{User.FullName} | {Equipment.Name} | Due: {DueDate.ToShortDateString()} | Returned: {returnedText} | Penalty: {PenaltyAmount:C}";
     }
 
 

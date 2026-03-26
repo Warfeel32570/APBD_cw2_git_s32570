@@ -69,4 +69,6 @@ public class EquipmentService
         equipment.MarkAsUnavailable();
         return true;
     }
+
+
 }

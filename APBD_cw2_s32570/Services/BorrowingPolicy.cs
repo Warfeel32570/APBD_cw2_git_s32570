@@ -16,7 +16,7 @@ public static class BorrowingPolicy
         {
             return 2;
         }
-        return 5;
+        return 5; //if employee
     }
 
     public static int GetMaxRentalDays()
