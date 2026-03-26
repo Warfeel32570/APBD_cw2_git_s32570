@@ -22,10 +22,10 @@ public class Rental
         BorrowDate = borrowDate;
         DueDate = dueDate;
         ReturnDate = null;
-        PenaltyAmount = 0m;
+        PenaltyAmount = 0m; //Because we don't know delay from the start
     }
     public bool IsReturned => ReturnDate.HasValue; 
-    public bool IsOverdue => !IsReturned && DateTime.Today > DueDate.Date;
+    public bool IsOverdue => !IsReturned && DateTime.Today > DueDate.Date; 
 
     public void MarkAsReturned(DateTime returnDate, decimal penaltyAmount)
     {
